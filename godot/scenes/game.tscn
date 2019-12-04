@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/2scale/bgSpace.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://sprites/2scale/stationHull.png" type="Texture" id=7]
 [ext_resource path="res://sprites/2scale/bgEarth.png" type="Texture" id=8]
 [ext_resource path="res://sprites/2scale/resourceHP.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Control.gd" type="Script" id=10]
+[ext_resource path="res://sprites/2scale/allyButton.png" type="Texture" id=11]
+[ext_resource path="res://sprites/2scale/powerShotButton.png" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 63.6188
@@ -21,6 +24,7 @@ position = Vector2( 400, 300 )
 texture = ExtResource( 2 )
 
 [node name="Station" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 400, 1500 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -77,3 +81,30 @@ texture = ExtResource( 9 )
 [node name="Heart2" type="Sprite" parent="."]
 position = Vector2( 95, 35 )
 texture = ExtResource( 9 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 10 )
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 152.787
+margin_top = 501.111
+margin_right = 228.787
+margin_bottom = 571.111
+icon = ExtResource( 11 )
+
+[node name="Control2" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control2"]
+margin_left = 567.64
+margin_top = 490.958
+margin_right = 633.64
+margin_bottom = 558.958
+
+[node name="powerShotButton" type="Sprite" parent="Control2/Button"]
+position = Vector2( 34.842, 34.4792 )
+texture = ExtResource( 12 )
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]
