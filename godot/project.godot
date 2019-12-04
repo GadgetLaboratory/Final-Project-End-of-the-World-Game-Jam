@@ -47,6 +47,9 @@ shoot={
 [layer_names]
 
 2d_physics/layer_1="Allies"
+2d_physics/layer_2="GoodBullets"
+2d_physics/layer_3="BadBullets"
+2d_physics/layer_4="Enemies"
 
 [rendering]
 

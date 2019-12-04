@@ -4,6 +4,8 @@
 [ext_resource path="res://sprites/2scale/foe3.png" type="Texture" id=2]
 
 [node name="DiveBomber" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 3
 gravity_scale = 0.5
 script = ExtResource( 1 )
 

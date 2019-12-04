@@ -4,6 +4,8 @@
 [ext_resource path="res://sprites/2scale/foe2.png" type="Texture" id=2]
 
 [node name="Blaster" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 3
 gravity_scale = 0.33
 script = ExtResource( 1 )
 
