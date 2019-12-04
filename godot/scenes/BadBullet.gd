@@ -18,3 +18,5 @@ func _process(delta):
 		queue_free()
 		if body.is_in_group("ally"):
 			body.queue_free()
+		if body.is_in_group("powerShot"):
+			queue_free()

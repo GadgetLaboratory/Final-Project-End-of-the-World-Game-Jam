@@ -37,4 +37,5 @@ func _process(delta):
 		if body.is_in_group("station"):
 			get_parent().get_node("Station").health -= 15
 			queue_free()
-	
+		if body.is_in_group("powerShot"):
+			queue_free()
