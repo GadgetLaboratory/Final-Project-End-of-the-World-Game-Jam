@@ -4,10 +4,11 @@ extends Node2D
 var new_bomber = preload("res://scenes/DiveBomber.tscn")
 var bomber_frequency = 200
 var ticks_since_bomber = 0
-
+var spawn_locations = [100,200,300,400,500,600,700]
+var last_spawn = 0
 var new_blaster = preload("res://scenes/Blaster.tscn")
 var blaster_frequency = 200
-var ticks_since_blaster = 50
+var ticks_since_blaster = 100
 
 var health = 4
 
@@ -21,14 +22,23 @@ func _process(delta):
 	ticks_since_blaster += 1
 	
 	if ticks_since_bomber > bomber_frequency:
+		var spawn = last_spawn
 		var bomber = new_bomber.instance()
-		bomber.position = Vector2(rand_range(100,700), -30)
+		while spawn == last_spawn:
+			randomize()
+			spawn = rand_range(0,7)
+		bomber.position = Vector2(spawn_locations[spawn], -30)
 		add_child(bomber)
 		ticks_since_bomber = 0
+		last_spawn = spawn
 	
 	if ticks_since_blaster > blaster_frequency:
+		var spawn = last_spawn
 		var blaster = new_blaster.instance()
-		blaster.position = Vector2(rand_range(100,700), -30)
+		while spawn == last_spawn:
+			randomize()
+			spawn = rand_range(0,7)
+		blaster.position = Vector2(spawn_locations[spawn], -30)
 		add_child(blaster)
 		ticks_since_blaster = 0
 	
