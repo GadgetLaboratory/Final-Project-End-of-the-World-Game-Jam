@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/2scale/bgSpace.png" type="Texture" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://sprites/2scale/resourceHP.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Control.gd" type="Script" id=10]
 [ext_resource path="res://sprites/2scale/allyButton.png" type="Texture" id=11]
-[ext_resource path="res://sprites/2scale/powerShotButton.png" type="Texture" id=12]
+[ext_resource path="res://scenes/Control2.gd" type="Script" id=12]
+[ext_resource path="res://sprites/2scale/powerShotButton.png" type="Texture" id=13]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 63.6188
@@ -97,6 +98,7 @@ icon = ExtResource( 11 )
 [node name="Control2" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 12 )
 
 [node name="Button" type="Button" parent="Control2"]
 margin_left = 567.64
@@ -106,5 +108,5 @@ margin_bottom = 558.958
 
 [node name="powerShotButton" type="Sprite" parent="Control2/Button"]
 position = Vector2( 34.842, 34.4792 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]
