@@ -19,6 +19,10 @@ config/name="New Game Project"
 run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=800
@@ -50,6 +54,7 @@ shoot={
 2d_physics/layer_2="GoodBullets"
 2d_physics/layer_3="BadBullets"
 2d_physics/layer_4="Enemies"
+2d_physics/layer_5="PowerShot"
 
 [rendering]
 

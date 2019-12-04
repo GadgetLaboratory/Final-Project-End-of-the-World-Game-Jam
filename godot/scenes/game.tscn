@@ -105,8 +105,6 @@ margin_left = 567.64
 margin_top = 490.958
 margin_right = 633.64
 margin_bottom = 558.958
-
-[node name="powerShotButton" type="Sprite" parent="Control2/Button"]
-position = Vector2( 34.842, 34.4792 )
-texture = ExtResource( 13 )
+icon = ExtResource( 13 )
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control2/Button" to="Control2" method="_on_Button_pressed"]

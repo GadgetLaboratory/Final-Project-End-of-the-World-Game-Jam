@@ -6,7 +6,7 @@
 [node name="Ally" type="RigidBody2D" groups=[
 "ally",
 ]]
-collision_mask = 0
+collision_mask = 12
 mass = 65535.0
 gravity_scale = -0.5
 script = ExtResource( 1 )
