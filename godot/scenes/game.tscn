@@ -24,7 +24,6 @@ position = Vector2( 400, 300 )
 texture = ExtResource( 2 )
 
 [node name="Station" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 400, 1500 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -34,6 +33,7 @@ __meta__ = {
 [node name="Hull" type="StaticBody2D" parent="Station" groups=[
 "station",
 ]]
+editor/display_folded = true
 position = Vector2( 0, -1000 )
 
 [node name="Cannon" type="StaticBody2D" parent="Station/Hull"]

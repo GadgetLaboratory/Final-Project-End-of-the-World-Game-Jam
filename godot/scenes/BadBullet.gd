@@ -16,3 +16,5 @@ func _process(delta):
 		if body.is_in_group("station"):
 			get_parent().get_node("Station").health -= 10
 		queue_free()
+		if body.is_in_group("ally"):
+			body.queue_free()
