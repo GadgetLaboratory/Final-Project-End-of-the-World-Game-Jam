@@ -4,6 +4,7 @@ extends RigidBody2D
 var new_bullet = preload("res://scenes/BadBullet.tscn")
 var TICKS_BETWEEN_BULLETS = 50
 var ticks = 0 
+var money = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +27,8 @@ func _process(delta):
 	var bodies = get_colliding_bodies()
 	for body in bodies:
 		if body.is_in_group("good"):
+			get_parent().money += money
+			get_parent().score += money
 			body.queue_free()
 			queue_free()
 		if body.is_in_group("earth"):

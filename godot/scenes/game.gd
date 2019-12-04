@@ -1,6 +1,10 @@
 extends Node2D
 
 # Declare member variables here. Examples:
+var score_last_tick = 0
+var money_last_tick = 0
+var score = 0
+var money = 0
 var new_bomber = preload("res://scenes/DiveBomber.tscn")
 var bomber_frequency = 200
 var ticks_since_bomber = 0
@@ -18,6 +22,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if score != score_last_tick:
+		get_node("Score").update_score()
+	if money != money_last_tick:
+		get_node("Money").update_money()
 	ticks_since_bomber += 1
 	ticks_since_blaster += 1
 	

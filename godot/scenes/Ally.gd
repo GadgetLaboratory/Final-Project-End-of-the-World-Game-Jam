@@ -15,7 +15,7 @@ func _process(delta):
 	if ticks > TICKS_BETWEEN_BULLETS:
 		var bullet = new_bullet.instance()
 		bullet.position = Vector2(position.x, position.y - 60)
-		bullet.rotate(275);
+		bullet.rotation_degrees = -90
 		bullet.linear_velocity = Vector2(0,-200)
 		get_parent().add_child(bullet)
 		ticks = 0

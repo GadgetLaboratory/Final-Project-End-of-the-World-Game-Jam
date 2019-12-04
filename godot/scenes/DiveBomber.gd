@@ -1,8 +1,7 @@
 extends RigidBody2D
 
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var money = 250
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +13,8 @@ func _process(delta):
 	var bodies = get_colliding_bodies()
 	for body in bodies:
 		if body.is_in_group("good"):
+			get_parent().money += money
+			get_parent().score += money
 			body.queue_free()
 			queue_free()
 		if body.is_in_group("earth"):

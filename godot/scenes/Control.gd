@@ -2,6 +2,7 @@ extends Control
 
 
 var new_ally = preload("res://scenes/Ally.tscn")
+var price = 500
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,6 +15,9 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_Button_pressed():
-	var ally = new_ally.instance()
-	ally.position = Vector2(rand_range(100,700), 400)
-	add_child(ally)
+	#CODE FOR CURRENCY HERE
+	if get_parent().money > price:
+		var ally = new_ally.instance()
+		ally.position = Vector2(rand_range(100,700), 400)
+		add_child(ally)
+		get_parent().money -= price
