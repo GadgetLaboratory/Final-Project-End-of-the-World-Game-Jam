@@ -104,7 +104,6 @@ margin_bottom = 571.111
 icon = ExtResource( 11 )
 
 [node name="Control2" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 12 )
@@ -114,10 +113,7 @@ margin_left = 567.64
 margin_top = 490.958
 margin_right = 633.64
 margin_bottom = 558.958
-
-[node name="powerShotButton" type="Sprite" parent="Control2/Button"]
-position = Vector2( 34.842, 34.4792 )
-texture = ExtResource( 13 )
+icon = ExtResource( 13 )
 
 [node name="Money" type="Label" parent="."]
 margin_left = 380.0
@@ -137,3 +133,4 @@ custom_fonts/font = SubResource( 2 )
 text = "Score"
 script = ExtResource( 16 )
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control2/Button" to="Control2" method="_on_Button_pressed"]
